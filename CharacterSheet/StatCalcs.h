@@ -2,6 +2,7 @@
 
 #define MINSTAT 1;
 #define STATAVG 10;
+#define BASEPROFBONUS 2;
 
 int calculateBonus(int stat){
 
@@ -17,4 +18,14 @@ int calculateBonus(int stat){
 		bonus = statDiff / 2;
 	}
 	return bonus;
+}
+
+int calcProfBonus(int lvl) {
+
+	int profBonus = BASEPROFBONUS;
+	int lvlBonus = (lvl - 1) / 4;
+	
+	profBonus += lvlBonus;
+
+	return profBonus;
 }
